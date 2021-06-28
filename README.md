@@ -39,7 +39,7 @@ $ docker-compose up
 $ npm install
 ```
 
-## Running the app
+## Running the app (local)
 
 ```bash
 # development
