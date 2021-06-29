@@ -14,6 +14,9 @@ import { WalletsModule } from './wallets/wallets.module';
 import { WalletTransfersModule } from './wallet-transfers/wallet-transfers.module';
 import { GeneralConfigModule } from './general-config/general-config.module';
 import { EmailsModule } from './emails/emails.module';
+import { MinioClientModule } from './minio-client/minio-client.module';
+import { ConfigModule } from '@nestjs/config';
+import { ImageUploadModule } from './image-upload/image-upload.module';
 
 @Module({
   imports: [
@@ -28,7 +31,10 @@ import { EmailsModule } from './emails/emails.module';
     WalletsModule,
     WalletTransfersModule,
     GeneralConfigModule,
-    EmailsModule
+    EmailsModule,
+    MinioClientModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+    ImageUploadModule
   ],
   controllers: [AppController],
   providers: [AppService],
